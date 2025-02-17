@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">mygym</string>
+    <string name="logo_desc">Logo of MyGym app</string>
+    <string name="todays_workout">Today\'s Workout</string>
+
+</resources>
