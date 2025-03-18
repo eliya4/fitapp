@@ -83,21 +83,6 @@
         tools:layout_editor_absoluteY="455dp" />
 
     <EditText
-        android:id="@+id/repeat_password"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Repeat Password"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="518dp" />
-
-    <EditText
         android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="50dp"
@@ -118,7 +103,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="152dp"
         android:backgroundTint="#007BFF"
         android:text="Create Account"
         android:textColor="#FFFFFF"

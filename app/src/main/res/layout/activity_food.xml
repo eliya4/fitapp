@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Food">
+
+    <EditText
+        android:id="@+id/search_exercises2"
+        android:layout_width="365dp"
+        android:layout_height="58dp"
+        android:background="@drawable/search_box_bg"
+        android:drawableEnd="@drawable/ic_search"
+        android:hint="Search for exercises"
+        android:padding="8dp"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="39dp" />
+
+    <TextView
+        android:id="@+id/user_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:drawableStart="@drawable/ic_user"
+        android:drawablePadding="1dp"
+        android:text="User:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/recyclerViewExercises"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="155dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

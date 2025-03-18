@@ -39,7 +39,7 @@
     </LinearLayout>
 
     <!-- Calories Section -->
-    \\לשי :איך אני מוסיפה שיהיה שם את התזכורות
+
 
     <TextView
         android:id="@+id/todays_workout"
@@ -217,9 +217,9 @@
             android:layout_width="384dp"
             android:layout_height="165dp" />
 
-        <SearchView
+        <!--SearchView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" /-->
     </FrameLayout>
 
     <!-- Bottom Navigation -->

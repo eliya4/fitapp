@@ -36,7 +36,6 @@
         android:layout_height="wrap_content"
         android:text="Lola, Lily"
         android:textSize="20sp"
-
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -76,17 +75,7 @@
 
     <!-- גרף נתונים -->
 
-    <ImageView
-        android:id="@+id/statisticsGraph"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/bar_chart_placeholder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/galleryLayout" />
+
 
     <ImageView
         android:id="@+id/imageView2"
@@ -94,31 +83,8 @@
         android:layout_height="176dp"
         android:src="@drawable/profile_imag"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="91dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="389dp"
-        android:layout_height="105dp"
-        android:src="@drawable/gallery_image_1"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="331dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="98dp"
-        android:layout_height="92dp"
-        android:src="@drawable/gallery_image_3"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="429dp" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="98dp"
-        android:layout_height="92dp"
-        android:src="@drawable/gallery_image_3"
-        tools:layout_editor_absoluteX="206dp"
-        tools:layout_editor_absoluteY="429dp" />
+        tools:layout_editor_absoluteY="91dp"
+        tools:ignore="MissingConstraints" />
 
     <!-- Bottom Navigation -->
     <LinearLayout
@@ -156,6 +122,12 @@
             android:src="@drawable/ic_profile" />
 
     </LinearLayout>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="438dp" />
 
     <!-- כפתור פעולה -->
 
