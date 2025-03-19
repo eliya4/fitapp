@@ -30,7 +30,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
         Exercise exercise = exerciseList.get(position);
         holder.exerciseName.setText(exercise.getName());
         holder.exerciseDescription.setText(exercise.getDescription());
-        holder.exerciseImage.setImageResource(exercise.getImageResource());
+        /*holder.exerciseImage.setImageResource(exercise.getImageResource());*/
     }
 
     @Override

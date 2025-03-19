@@ -33,13 +33,13 @@ public class FoodLay extends AppCompatActivity {
     }
 
 
-    private void loadExercises() {
+    private void loadExercises() {/*
         exerciseList.add(new Exercise("Push Up", "Upper body workout", R.drawable.push_up));
         exerciseList.add(new Exercise("Squat", "Lower body workout", R.drawable.squat));
 
 
         // עדכון הרשימה כדי להציג את השינויים
-        exerciseAdapter.notifyDataSetChanged();
+        exerciseAdapter.notifyDataSetChanged();*/
     }
 
 }
