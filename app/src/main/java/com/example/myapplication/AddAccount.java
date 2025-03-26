@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,7 +25,7 @@ public class AddAccount extends Activity {
     private EditText emailET, passwordET, nameET, usernameET;
     private FirebaseAuth mAuth;
     private FirebaseDatabaseService databaseService;
-
+    private ImageButton back;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_account);
@@ -40,12 +41,20 @@ public class AddAccount extends Activity {
             finish();
             return;
         }
-        
+        back=findViewById(R.id.backButton);
         emailET = findViewById(R.id.email);
         passwordET = findViewById(R.id.password);
         nameET = findViewById(R.id.full_name);
         usernameET = findViewById(R.id.username);
         singup = findViewById(R.id.create_account_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(AddAccount.this,LoginActivity.class);
+                startActivity(intent);
+
+            }
+        });
         
         singup.setOnClickListener(new View.OnClickListener() {
             @Override
