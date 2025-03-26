@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
-public class Exercise {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Exercise extends AppCompatActivity {
     private String id;
     private String name;
     private String description;

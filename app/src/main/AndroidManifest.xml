@@ -27,6 +27,10 @@
             android:name=".AddAccount"
             android:exported="false" />
         <activity
+        <activity
+            android:name=".Exercise"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false">
         </activity>
