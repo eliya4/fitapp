@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageButton list=findViewById(R.id.add_button);
         setContentView(R.layout.activity_main);
         ImageButton profile_button=findViewById(R.id.profile_button);
         ImageButton breakfast_button=findViewById(R.id.food_breakfast_button);
@@ -24,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,Profile.class);
                 startActivity(intent);
 
+            }
+        });
+        list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this,Exercise.class);
+                startActivity(intent);
             }
         });
         breakfast_button.setOnClickListener(new View.OnClickListener() {
