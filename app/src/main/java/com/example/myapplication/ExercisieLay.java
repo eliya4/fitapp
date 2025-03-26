@@ -17,7 +17,7 @@ public class ExercisieLay  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_exercise);
 
         // קישור ה-RecyclerView ל-ID ב-XML
         recyclerView = findViewById(R.id.recyclerViewExercises);
@@ -36,10 +36,6 @@ public class ExercisieLay  extends AppCompatActivity {
     private void loadExercises() {
         exerciseList.add(new Exercise("Push Up", "Upper body workout", R.drawable.push_up));
         exerciseList.add(new Exercise("Squat", "Lower body workout", R.drawable.squat));
-
-
-        // עדכון הרשימה כדי להציג את השינויים
-        exerciseAdapter.notifyDataSetChanged();
     }
 
 }

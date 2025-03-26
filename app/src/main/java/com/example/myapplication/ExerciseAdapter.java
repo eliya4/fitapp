@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     // Constructor לקבלת הרשימה
     public ExerciseAdapter(List<Exercise> exerciseList) {
         this.exerciseList = exerciseList;
+        Log.d("Exercise Adapter", "Adapter created with " + exerciseList.size() + " exercises.");
     }
 
     @NonNull
@@ -31,7 +33,9 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseViewHolder holder, int position) {
+
         Exercise exercise = exerciseList.get(position);
+        Log.d("Exercise Adapter", "Binding: " + exercise.getName());
         holder.imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +49,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     @Override
     public int getItemCount() {
+        Log.d("Exercise Adapter", "Item count: " + exerciseList.size());
         return exerciseList.size();
     }
 
