@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //TODO: fix the id to the right one
         ImageButton list=findViewById(R.id.add_button);
         setContentView(R.layout.activity_main);
         ImageButton profile_button=findViewById(R.id.profile_button);
