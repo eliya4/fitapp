@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageButton list=findViewById(R.id.add_button);
         setContentView(R.layout.activity_main);
+        ImageButton list=findViewById(R.id.add_button);
         ImageButton profile_button=findViewById(R.id.profile_button);
         ImageButton breakfast_button=findViewById(R.id.food_breakfast_button);
         ImageButton lunch_button=findViewById(R.id.food_lunch_button);
