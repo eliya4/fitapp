@@ -1,11 +1,64 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
+    <!-- תמונה עגולה לפרופיל -->
+
+    <!-- שם המשתמש -->
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="161dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/userDescription"
+        app:srcCompat="@drawable/gallery_image_1" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="161dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userDescription"
+        app:srcCompat="@drawable/gallery_image_1" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="161dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/userDescription"
+        app:srcCompat="@drawable/gallery_image_1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="161dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userDescription"
+        app:srcCompat="@drawable/gallery_image_1" />
 
     <ImageView
         android:id="@+id/topBackgroundImage"
@@ -13,36 +66,41 @@
         android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:src="@drawable/top_background"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- תמונה עגולה לפרופיל -->
-
-    <!-- שם המשתמש -->
+    <!-- תיאור -->
 
     <ImageView
+        android:id="@+id/imageView7"
         android:layout_width="240dp"
         android:layout_height="227dp"
         android:src="@drawable/baseline_circle_24"
-        tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="66dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topBackgroundImage"
+        app:layout_constraintVertical_bias="0.095" />
 
-    <!-- תיאור -->
+    <!-- תמונות גלריה -->
 
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Lola, Lily"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="275dp" />
-
-    <!-- תמונות גלריה -->
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/userDescription"
@@ -61,14 +119,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:rowCount="2"
         android:columnCount="2"
-        app:layout_constraintTop_toBottomOf="@id/userDescription"
+        android:rowCount="2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/userDescription">
 
 
     </GridLayout>
@@ -76,14 +131,15 @@
     <!-- גרף נתונים -->
 
 
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="188dp"
         android:layout_height="176dp"
         android:src="@drawable/profile_imag"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="91dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
         tools:ignore="MissingConstraints" />
 
     <!-- Bottom Navigation -->
@@ -128,6 +184,16 @@
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="438dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="87dp"
+        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <!-- כפתור פעולה -->
 
