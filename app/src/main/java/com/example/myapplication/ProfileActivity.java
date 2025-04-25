@@ -5,18 +5,24 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
     private TextView usernameTextView;
+    private ImageButton home_button;
     private ImageView imageProfile;
     private TextView userDescriptionTextView;
+    // ADDED: four grid ImageViews to allow picks from gallery
+    private ImageView imageGrid1, imageGrid2, imageGrid3, imageGrid4;
+    // ADDED: tracks which ImageView was clicked to update in onActivityResult
+    private ImageView currentImageView;
+
     private FirebaseDatabaseService databaseService;
     private static final int REQUEST_IMAGE_PICK = 1000;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,23 +30,46 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         // Initialize views
+        home_button=findViewById(R.id.home_button);
         usernameTextView = findViewById(R.id.username);
         userDescriptionTextView = findViewById(R.id.userDescription);
-        imageProfile=findViewById(R.id.imageView2);
-        imageProfile.setOnClickListener(new View.OnClickListener() {
+        imageProfile = findViewById(R.id.imageView2);
+        // ADDED: initialize the grid ImageViews
+        imageGrid1 = findViewById(R.id.imageView11);
+        imageGrid2 = findViewById(R.id.imageView10);
+        imageGrid3 = findViewById(R.id.imageView4);
+        imageGrid4 = findViewById(R.id.imageView);
+        home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pickIntent = new Intent(
-                        Intent.ACTION_PICK,
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-                );
-                pickIntent.setType("image/*");
-                startActivityForResult(pickIntent, REQUEST_IMAGE_PICK);
-
-
+                Intent intent = new Intent(ProfileActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 
+
+        // Profile picture click
+        imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ADDED: set currentImageView to profile so we know which to update
+                currentImageView = imageProfile;
+                pickImageFromGallery();  // ADDED: common picker method
+            }
+        });
+
+        // ADDED: shared click listener for grid images
+        View.OnClickListener gridClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentImageView = (ImageView) v;  // ADDED: track which grid image was tapped
+                pickImageFromGallery();            // ADDED: reuse picker
+            }
+        };
+        imageGrid1.setOnClickListener(gridClickListener);
+        imageGrid2.setOnClickListener(gridClickListener);
+        imageGrid3.setOnClickListener(gridClickListener);
+        imageGrid4.setOnClickListener(gridClickListener);
 
         // Initialize Firebase service
         databaseService = FirebaseDatabaseService.getInstance();
@@ -48,20 +77,34 @@ public class ProfileActivity extends AppCompatActivity {
         // Load user profile
         loadUserProfile();
     }
+
+    // ADDED: helper method to launch gallery picker
+    private void pickImageFromGallery() {
+        Intent pickIntent = new Intent(
+                Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+        );
+        pickIntent.setType("image/*");
+        startActivityForResult(pickIntent, REQUEST_IMAGE_PICK);
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        // ADDED: handle the picked image for any ImageView
         if (requestCode == REQUEST_IMAGE_PICK
                 && resultCode == RESULT_OK
                 && data != null) {
             Uri selectedImageUri = data.getData();
-            if (selectedImageUri != null) {
-                imageProfile.setImageURI(selectedImageUri);
+            if (selectedImageUri != null && currentImageView != null) {
+                currentImageView.setImageURI(selectedImageUri);  // ADDED: update the clicked view
+
+                // TODO: Save the new image URI to Firebase or your database
+                // e.g., databaseService.saveImageUri(userId, selectedImageUri, new Callback() { ... });
             }
         }
     }
-    //שי אני עשיתי שאפשר לערוך את התמונה תזור לי להכניס את זה לדאטה ביס כדי שזה ישר ואמ אפשר שזה י היה עגול גם:)
-
 
     private void loadUserProfile() {
         databaseService.getUserProfile(new FirebaseDatabaseService.DatabaseCallback() {
@@ -82,4 +125,4 @@ public class ProfileActivity extends AppCompatActivity {
         usernameTextView.setText(profile.getName());
         userDescriptionTextView.setText(profile.getUsername());
     }
-} 
+}

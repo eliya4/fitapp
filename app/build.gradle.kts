@@ -47,7 +47,8 @@ dependencies {
     
     // Firebase Realtime Database
     implementation("com.google.firebase:firebase-database")
-    
+    implementation(libs.androidx.activity)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

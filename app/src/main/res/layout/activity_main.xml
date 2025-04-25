@@ -240,12 +240,12 @@
             android:src="@drawable/ic_home" />
 
         <ImageButton
-            android:id="@+id/add_exercise_button"
+            android:id="@+id/chat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_add" />
+            android:src="@drawable/baseline_chat_bubble_outline_24" />
 
         <ImageButton
             android:id="@+id/profile_button"

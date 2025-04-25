@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //TODO: fix the id to the right one
-        ImageButton list=findViewById(R.id.add_exercise_button);
         ImageButton profile_button=findViewById(R.id.profile_button);
+        ImageButton chat=findViewById(R.id.chat);
+
         ImageButton breakfast_button=findViewById(R.id.food_breakfast_button);
         ImageButton lunch_button=findViewById(R.id.food_lunch_button);
         ImageButton dinner_button=findViewById(R.id.food_dinner_button);
@@ -31,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AItBot.class);
+                startActivity(intent);
+            }
+        });
 
         profile_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,13 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        list.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(MainActivity.this, ExercisieLay.class);
-                startActivity(intent);
-            }
-        });
+
         breakfast_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
