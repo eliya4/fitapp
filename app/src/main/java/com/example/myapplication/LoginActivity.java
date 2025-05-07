@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +34,7 @@ public class LoginActivity extends Activity {
         creatb=findViewById(R.id.createAccountLink);///שי למה זה ככה?
         emailEditText=findViewById(R.id.emailField);
         passwordEditText=findViewById(R.id.passwordField);
+        Log.d("Fitness_login","User can now login");
         creatb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

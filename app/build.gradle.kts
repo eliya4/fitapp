@@ -8,6 +8,11 @@ android {
     namespace = "com.example.myapplication"
     compileSdk = 34
 
+    // הפעלת BuildConfig מותאם
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 30
@@ -16,6 +21,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -34,18 +40,21 @@ android {
 }
 
 dependencies {
+    // UI & maps
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.play.services.maps)
-    
+
+    // Step 2: AI-Chat dependencies
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-livedata:2.5.1")
+
     // Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
-    
-    // Firebase Authentication
     implementation("com.google.firebase:firebase-auth")
-    
-    // Firebase Realtime Database
     implementation("com.google.firebase:firebase-database")
     implementation(libs.androidx.activity)
 
