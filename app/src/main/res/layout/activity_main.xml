@@ -210,17 +210,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_below="@id/food_section"
-        android:padding="16dp">
-
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="384dp"
-            android:layout_height="165dp" />
-
-        <!--SearchView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" /-->
-    </FrameLayout>
+        android:padding="16dp"/>
 
     <!-- Bottom Navigation -->
     <LinearLayout

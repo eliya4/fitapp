@@ -1,13 +1,10 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,19 +13,21 @@ import com.example.myapplication.ui.ChatAdapter;
 import com.example.myapplication.viewmodel.ChatViewModel;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.List;
+import androidx.activity.EdgeToEdge;
 
 public class AItBot extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // שלב 3: התאמת המסך לגובה המקלדת (לפני setContentView)
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+        );
+
+        // אפשרות להמשיך להשתמש ב-EdgeToEdge אם רוצים
         EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_ait_bot);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         // קישור רכיבי ה-UI
         RecyclerView rvChat = findViewById(R.id.rvChat);

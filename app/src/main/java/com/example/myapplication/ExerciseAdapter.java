@@ -4,12 +4,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
@@ -18,7 +15,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     private List<Exercise> exerciseList;
 
-    // Constructor לקבלת הרשימה
     public ExerciseAdapter(List<Exercise> exerciseList) {
         this.exerciseList = exerciseList;
         Log.d("Exercise Adapter", "Adapter created with " + exerciseList.size() + " exercises.");
@@ -33,23 +29,18 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     @Override
     public void onBindViewHolder(@NonNull ExerciseViewHolder holder, int position) {
-
         Exercise exercise = exerciseList.get(position);
         Log.d("Exercise Adapter", "Binding: " + exercise.getName());
-        holder.imgBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(),"Press Exercise: "+exercise.getName(),Toast.LENGTH_LONG).show();
-            }
+        holder.imgBtn.setOnClickListener(v -> {
+            Log.d("Exercise Adapter", "Pressed Exercise: " + exercise.getName());
         });
         holder.exerciseName.setText(exercise.getName());
         holder.exerciseDescription.setText(exercise.getDescription());
-        /*holder.exerciseImage.setImageResource(exercise.getImageResource());*/
+        holder.exerciseImage.setImageResource(exercise.getImageResource());
     }
 
     @Override
     public int getItemCount() {
-        Log.d("Exercise Adapter", "Item count: " + exerciseList.size());
         return exerciseList.size();
     }
 
