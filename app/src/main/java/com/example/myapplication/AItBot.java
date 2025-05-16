@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -23,6 +26,7 @@ public class AItBot extends AppCompatActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
         );
+        ImageView backntn2=findViewById(R.id.ReturnBtn2);
 
         // אפשרות להמשיך להשתמש ב-EdgeToEdge אם רוצים
         EdgeToEdge.enable(this);
@@ -47,6 +51,7 @@ public class AItBot extends AppCompatActivity {
             adapter.submitList(messages);
             rvChat.scrollToPosition(messages.size() - 1);
         });
+        
 
         // לחצן השליחה שולח את הטקסט ל-ViewModel
         btnSend.setOnClickListener(v -> {
@@ -56,5 +61,6 @@ public class AItBot extends AppCompatActivity {
                 etMessage.setText("");
             }
         });
+
     }
 }

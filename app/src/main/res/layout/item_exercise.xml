@@ -34,13 +34,6 @@
             android:textStyle="bold" />
 
         <!-- תיאור התרגיל -->
-
-        <ImageButton
-            android:id="@+id/addexercise"
-            android:layout_width="wrap_content"
-            android:layout_height="47dp"
-            app:srcCompat="@drawable/ic_add" />
-
         <TextView
             android:id="@+id/exercise_description"
             android:layout_width="wrap_content"
@@ -50,4 +43,13 @@
             android:textColor="@android:color/darker_gray" />
     </LinearLayout>
 
+    <!-- כפתור פלוס להוספת תרגיל -->
+    <ImageButton
+        android:id="@+id/addexercise"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:padding="8dp"
+        app:srcCompat="@drawable/ic_add"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Add Exercise" />
 </LinearLayout>

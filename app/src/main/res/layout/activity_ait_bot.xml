@@ -9,6 +9,7 @@
     tools:context=".AItBot">
 
     <!-- Header -->
+
     <TextView
         android:id="@+id/tvHeader"
         android:layout_width="0dp"
@@ -24,6 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Chat messages list -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChat"
         android:layout_width="0dp"
@@ -76,5 +78,13 @@
         app:layout_constraintTop_toBottomOf="@id/tvHeader"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
+
+    <ImageView
+        android:id="@+id/ReturnBtn2"
+        android:layout_width="56dp"
+        android:layout_height="42dp"
+        app:srcCompat="@drawable/baseline_chevron_left_24"
+        tools:layout_editor_absoluteX="355dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

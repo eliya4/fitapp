@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,30 +8,40 @@
     android:padding="16dp"
     tools:context=".ExercisieLay">
 
-
     <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
         <ImageView
+            android:id="@+id/ReturnBtn"
             android:layout_width="24dp"
-            android:layout_height="match_parent"
-            android:contentDescription="Forward Button"
+            android:layout_height="wrap_content"
+            android:contentDescription="Back Button"
             android:src="@drawable/baseline_chevron_left_24" />
 
         <TextView
-            android:id="@+id/user_name"
-            android:layout_width="wrap_content"
+            android:id="@+id/workout_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_user"
-            android:drawablePadding="1dp"
-            android:text="User:"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:text="שם האימון"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
-
+        <ImageView
+            android:id="@+id/save_workout_button"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Save Button"
+            android:src="@drawable/ic_save"
+            android:layout_marginEnd="8dp" />
     </LinearLayout>
 
     <!-- Search Bar -->
@@ -42,33 +50,46 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="16dp"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@drawable/search_box_bg">
 
         <EditText
             android:id="@+id/search_exercises"
-            android:layout_width="365dp"
-            android:layout_height="58dp"
-            android:background="@drawable/search_box_bg"
-            android:drawableEnd="@drawable/ic_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="Search for exercises"
             android:padding="8dp"
             android:textColor="@color/black" />
 
-
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_search"
-            android:contentDescription="Search Icon" />
+            android:id="@+id/search_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Search Icon"
+            android:padding="8dp"
+            android:src="@drawable/ic_search" />
     </LinearLayout>
 
     <!-- RecyclerView for Exercise List -->
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewExercises"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
 
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/save_workout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="שמירת אימון"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:id="@+id/recyclerViewExercises" />
-
+        android:layout_marginBottom="8dp"
+        android:padding="12dp" />
 
 </LinearLayout>

@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
     private TextView usernameTextView;
-    private ImageButton home_button;
+    private ImageButton home_button,AiBtn;
     private ImageView imageProfile;
     private TextView userDescriptionTextView;
     // ADDED: four grid ImageViews to allow picks from gallery
@@ -31,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         // Initialize views
         home_button=findViewById(R.id.home_button);
+        AiBtn= findViewById(R.id.ai_button);
         usernameTextView = findViewById(R.id.username);
         userDescriptionTextView = findViewById(R.id.userDescription);
         imageProfile = findViewById(R.id.imageView2);
@@ -43,6 +44,13 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        AiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, AItBot.class);
                 startActivity(intent);
             }
         });
