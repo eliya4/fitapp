@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +29,15 @@ public class MyWorkoutsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_workouts);
-
+         ImageView retbtn=findViewById(R.id.returnBtn);
+         retbtn.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent;
+                 intent = new Intent(MyWorkoutsActivity.this, MainActivity.class);
+                 startActivity(intent);
+             }
+         });
         workoutsRecyclerView = findViewById(R.id.recyclerViewWorkouts);
         workoutsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -40,7 +50,10 @@ public class MyWorkoutsActivity extends AppCompatActivity {
         workoutsRecyclerView.setAdapter(workoutAdapter);
 
         loadUserWorkouts();
+
     }
+
+
 
     private void loadUserWorkouts() {
         String userId = getUserId();
@@ -73,6 +86,7 @@ public class MyWorkoutsActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private String getUserId() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();

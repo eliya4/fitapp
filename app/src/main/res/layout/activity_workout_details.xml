@@ -8,21 +8,28 @@
 
     <!-- כותרת האימון -->
 
+    <ImageView
+        android:id="@+id/ret"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:contentDescription="Back Button"
+        android:src="@drawable/baseline_chevron_left_24" />
+
+
+    <!-- רשימת תרגילים -->
+
     <TextView
         android:id="@+id/workout_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MY WORKOUT"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:background="#007BFF"
-        android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp"
+        android:background="#007BFF"
+        android:gravity="center"
         android:padding="12dp"
-        android:gravity="center" />
-
-
-    <!-- רשימת תרגילים -->
+        android:text="MY WORKOUT"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewExercises"

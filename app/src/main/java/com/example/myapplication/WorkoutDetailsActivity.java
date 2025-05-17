@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -46,6 +48,18 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
             finish();
             return;
         }
+        ImageView retbt2;
+        retbt2= findViewById(R.id.ret);
+        retbt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent;
+                intent = new Intent(WorkoutDetailsActivity.this, MyWorkoutsActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         // הגדרת ה-Database Reference לאימון הנבחר
         workoutRef = FirebaseDatabase.getInstance()
@@ -58,6 +72,7 @@ public class WorkoutDetailsActivity extends AppCompatActivity {
         // אתחול רכיבים
         workoutTitle = findViewById(R.id.workout_title);
         workoutTitle.setText("Exercisie in the workout: " + workoutName);
+
 
         recyclerView = findViewById(R.id.recyclerViewExercises);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

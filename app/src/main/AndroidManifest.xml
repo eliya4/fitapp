@@ -25,6 +25,13 @@
             android:name=".AiFit"
             android:exported="false" />
         <activity
+            android:name=".WorkoutDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MyWorkoutsActivity"
+            android:exported="false" />
+        <activity
+
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
