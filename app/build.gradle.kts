@@ -39,6 +39,7 @@ android {
     }
 }
 
+
 dependencies {
     // UI & maps
     implementation(libs.appcompat)

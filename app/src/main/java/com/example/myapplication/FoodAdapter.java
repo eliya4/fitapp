@@ -14,7 +14,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     private List<Food> foodList;
 
-    // Constructor לקבלת הרשימה
     public FoodAdapter(List<Food> foodList) {
         this.foodList = foodList;
     }
@@ -35,15 +34,17 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.foodImage.setImageResource(food.getImageResource());
 
         // הוספת מאזין לחצן הוספת אוכל
-        holder.addFoodButton.setOnClickListener(v -> {
-            // כאן אפשר להוסיף קוד להוספת האוכל לרשימה או לחשבון
-            System.out.println("Added " + food.getName() + " to the meal plan");
-        });
+
     }
 
     @Override
     public int getItemCount() {
         return foodList.size();
+    }
+
+    public void filterList(List<Food> filteredList) {
+        this.foodList = filteredList;
+        notifyDataSetChanged();
     }
 
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
@@ -57,7 +58,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             foodDescription = itemView.findViewById(R.id.food_description);
             foodCalories = itemView.findViewById(R.id.food_calories);
             foodImage = itemView.findViewById(R.id.food_image);
-            addFoodButton = itemView.findViewById(R.id.add_food);
         }
     }
 }

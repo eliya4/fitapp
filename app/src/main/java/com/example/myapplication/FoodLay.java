@@ -1,6 +1,10 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,19 +15,37 @@ public class FoodLay extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FoodAdapter foodAdapter;
     private List<Food> foodList;
+    private List<Food> filteredFoodList;
+    private EditText searchFoodEditText;
+    private ImageView searchIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
+
+        searchFoodEditText = findViewById(R.id.search_food);
+        searchIcon = findViewById(R.id.search_icon);
         recyclerView = findViewById(R.id.recyclerViewFood);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         foodList = new ArrayList<>();
+        filteredFoodList = new ArrayList<>();
         loadFoodItems();
 
-        foodAdapter = new FoodAdapter(foodList);
+        // Use filtered list for adapter
+        filteredFoodList.addAll(foodList);
+        foodAdapter = new FoodAdapter(filteredFoodList);
         recyclerView.setAdapter(foodAdapter);
+
+        // Set click listener on search icon
+        searchIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String query = searchFoodEditText.getText().toString().trim();
+                filterFoodItems(query);
+            }
+        });
     }
 
     private void loadFoodItems() {
@@ -42,5 +64,18 @@ public class FoodLay extends AppCompatActivity {
         foodList.add(new Food("Grilled Vegetables", "Healthy side dish", 100, "side", R.drawable.grilled_vegetables));
         foodList.add(new Food("Rice Bowl", "Simple and filling", 220, "main", R.drawable.rice_bowl));
         foodList.add(new Food("Avocado Toast", "Trendy breakfast option", 280, "main", R.drawable.avocado_toast));
+
+        // Add all items to filtered list initially
+        filteredFoodList.addAll(foodList);
+    }
+
+    private void filterFoodItems(String query) {
+        filteredFoodList.clear();
+        for (Food food : foodList) {
+            if (food.getName().toLowerCase().contains(query.toLowerCase())) {
+                filteredFoodList.add(food);
+            }
+        }
+        foodAdapter.notifyDataSetChanged();
     }
 }
