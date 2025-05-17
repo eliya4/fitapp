@@ -182,21 +182,26 @@
     </LinearLayout>
 
 
+    <!-- Bottom Navigation -->
     <FrameLayout
         android:id="@+id/map_section"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="285dp"
         android:layout_below="@id/food_section"
+        android:layout_marginTop="16dp"
         android:padding="16dp">
 
         <ImageButton
             android:id="@+id/creat_newworkout"
-            android:layout_width="389dp"
-            android:layout_height="183dp"
-            app:srcCompat="@drawable/ic_add" />
+            android:layout_width="wrap_content"
+            android:layout_height="247dp"
+            android:background="@drawable/rounded_button"
+            app:srcCompat="@drawable/newwork"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true" />
+
     </FrameLayout>
 
-    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
