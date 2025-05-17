@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:paddingStart="16dp"
             android:paddingLeft="16dp"
-            android:text="שם האימון"
+            android:text="Workout name "
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black" />
@@ -84,7 +84,7 @@
         android:id="@+id/save_workout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="שמירת אימון"
+        android:text="Save workout"
         android:textColor="@color/white"
         android:backgroundTint="@color/blue"
         android:textStyle="bold"

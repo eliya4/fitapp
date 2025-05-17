@@ -31,7 +31,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.foodName.setText(food.getName());
         holder.foodDescription.setText(food.getDescription());
         holder.foodCalories.setText(food.getCalories() + " Calories");
-        holder.foodImage.setImageResource(food.getImageResource());
+
 
         // הוספת מאזין לחצן הוספת אוכל
 
@@ -57,7 +57,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             foodName = itemView.findViewById(R.id.food_name);
             foodDescription = itemView.findViewById(R.id.food_description);
             foodCalories = itemView.findViewById(R.id.food_calories);
-            foodImage = itemView.findViewById(R.id.food_image);
         }
     }
 }

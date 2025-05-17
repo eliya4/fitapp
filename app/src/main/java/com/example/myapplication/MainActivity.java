@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton breakfast_button = findViewById(R.id.food_breakfast_button);
         ImageButton lunch_button = findViewById(R.id.food_lunch_button);
         ImageButton dinner_button = findViewById(R.id.food_dinner_button);
-        ImageButton profile_button = findViewById(R.id.profile_button);
         ImageButton chat = findViewById(R.id.chat);
         ImageButton creat = findViewById(R.id.creat_newworkout);
         TextView workoutButton = findViewById(R.id.workout);
@@ -75,10 +74,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        profile_button.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-            startActivity(intent);
-        });
+
     }
 
     private void showCreateWorkoutDialog() {

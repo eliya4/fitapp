@@ -6,14 +6,6 @@
     android:padding="8dp"
     android:background="?android:attr/selectableItemBackground">
 
-    <ImageView
-        android:id="@+id/food_image"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="Food Image" />
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -43,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Calories"
             android:textSize="14sp"
-            android:textColor="@android:color/holo_red_light"
+            android:textColor="#007BFF"
             android:paddingTop="4dp" />
 
     </LinearLayout>

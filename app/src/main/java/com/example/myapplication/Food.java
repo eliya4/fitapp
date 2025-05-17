@@ -9,7 +9,7 @@ public class Food {
     private int imageResource;
 
     // Constructor המלא
-    public Food(String name, String description, int calories, String type, int imageResource) {
+    public Food(String name, String description, int calories, String type) {
         this.name = name;
         this.description = description;
         this.calories = calories;

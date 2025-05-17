@@ -26,17 +26,19 @@ public class AItBot extends AppCompatActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
         );
-        ImageView backntn2=findViewById(R.id.ReturnBtn2);
 
         // אפשרות להמשיך להשתמש ב-EdgeToEdge אם רוצים
         EdgeToEdge.enable(this);
 
         setContentView(R.layout.activity_ait_bot);
 
+        //
         // קישור רכיבי ה-UI
         RecyclerView rvChat = findViewById(R.id.rvChat);
         TextInputEditText etMessage = findViewById(R.id.etMessage);
         ImageButton btnSend = findViewById(R.id.btnSend);
+        ImageView backntn2=findViewById(R.id.ReturnBtn2);
+
 
         // הגדרת ה-Adapter וה-LayoutManager
         ChatAdapter adapter = new ChatAdapter();
@@ -59,6 +61,13 @@ public class AItBot extends AppCompatActivity {
             if (!text.isEmpty()) {
                 vm.sendMessage(text, AItBot.this);
                 etMessage.setText("");
+            }
+        });
+        backntn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AItBot.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 

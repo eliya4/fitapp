@@ -183,22 +183,23 @@
 
 
     <!-- Bottom Navigation -->
+
     <FrameLayout
         android:id="@+id/map_section"
         android:layout_width="match_parent"
         android:layout_height="285dp"
         android:layout_below="@id/food_section"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="31dp"
         android:padding="16dp">
 
         <ImageButton
             android:id="@+id/creat_newworkout"
             android:layout_width="wrap_content"
-            android:layout_height="247dp"
-            android:background="@drawable/rounded_button"
-            app:srcCompat="@drawable/newwork"
+            android:layout_height="207dp"
+            android:clipToOutline="true"
             android:scaleType="centerCrop"
-            android:clipToOutline="true" />
+            app:srcCompat="@drawable/workoutadd"
+            android:background="@color/white"/>
 
     </FrameLayout>
 
@@ -226,13 +227,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/baseline_chat_bubble_outline_24" />
 
-        <ImageButton
-            android:id="@+id/profile_button"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_profile" />
+
 
     </LinearLayout>
 

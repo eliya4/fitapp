@@ -14,7 +14,8 @@
         android:id="@+id/tvHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="AI Coach"
+        android:text="                             AI Coach"
+
         android:textSize="20sp"
         android:textStyle="bold"
         android:padding="16dp"
@@ -83,8 +84,12 @@
         android:id="@+id/ReturnBtn2"
         android:layout_width="56dp"
         android:layout_height="42dp"
-        app:srcCompat="@drawable/baseline_chevron_left_24"
-        tools:layout_editor_absoluteX="355dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvHeader"
+        app:layout_constraintTop_toTopOf="@+id/tvHeader"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_chevron_left_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
